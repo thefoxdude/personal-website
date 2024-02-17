@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<head>
+	<title >Ultimate Tic Tac Toe!</title>
+	<link rel="stylesheet" type="text/css" href="MyStyle.css">
+	<script>
+		var a = 0;
+		function move(e) {
+			// get parent of cell clicked
+			var block = e.parentNode.id;
+			// make sure block is not disabled
+			if (block.slice(-1) != 'd') {
+				if (e.innerHTML == "") {
+					if (a%2 == 0 || a == 0) {
+						e.innerHTML = "X";
+						a++;
+					}
+					else if (a%2 == 1) {
+						e.innerHTML = "O";
+						a++;
+					}
+					else {
+						alert("Something is wrong");
+					}
+					winningMove(e);
+					playerMove(e);
+				}
+				else {
+					alert("You can't go here");
+				}
+			}
+		else {
+			alert("This block is disabled");
+		}
+			
+		}
+	</script>
+	<script>
+		var b = 0;
+		var c = "";
+		var d = "";
+		var f = 0;
+		
+		// to determine where next player will be sent and which blocks are enabled and disabled
+		function playerMove(e) {
+			b = e.id;
+			c = b.toString();
+			d = c.slice(-1);
+			var blockHasBeenWon = 0;
+				
+			for (var i = 1; i <= 9; i++) {
+				if (d == i) {
+					var disabledBlock = "";
+					// this finds chosen block and enables it
+					try {
+						document.getElementById("block" + i + "Disabled").className = "tttBlock Block" + i;
+						document.getElementById("block" + i + "Disabled").id = "block" + i;
+						for (var h = 1; h <= 9; h++) {
+								document.getElementById("cell" + i + "_" + h).className = "tttCell";
+						}
+					}
+					// if the block chosen is the same as current block or if the block has been won already
+					catch (err) {
+						try {
+							document.getElementById("block" + i).className = "tttBlock Block" + i;
+						}
+						catch (err) {
+							// enables all blocks if block selected has already been won
+							if (i >= 2) {
+								for (var blockNumber = 1; blockNumber <= i; blockNumber++) {
+									try {
+										document.getElementById("block" + blockNumber + "Disabled").className = "tttBlock Block" + blockNumber;
+										document.getElementById("block" + blockNumber + "Disabled").id = "block" + blockNumber;
+										for (var cellNumber = 1; cellNumber <= 9; cellNumber++) {
+											document.getElementById("cell" + blockNumber + "_" + cellNumber).className = "tttCell";
+										}
+									}
+									catch(err) {}
+									blockHasBeenWon = 1;
+								}
+								for (var blockNumber = i + 1; blockNumber <= 9; blockNumber++) {
+									try {
+										document.getElementById("block" + blockNumber + "Disabled").className = "tttBlock Block" + blockNumber;
+										document.getElementById("block" + blockNumber + "Disabled").id = "block" + blockNumber;
+										for (var cellNumber = 1; cellNumber <= 9; cellNumber++) {
+											document.getElementById("cell" + blockNumber + "_" + cellNumber).className = "tttCell";
+										}
+									}
+									catch(err) {}
+									blockHasBeenWon = 1;
+								}
+							}
+							else if (i == 1) {
+								
+								for (var blockNumber = 2; blockNumber <= 9; blockNumber++) {
+									
+									try {
+										document.getElementById("block" + blockNumber + "Disabled").className = "tttBlock Block" + blockNumber;
+										document.getElementById("block" + blockNumber + "Disabled").id = "block" + blockNumber;
+										for (var cellNumber = 1; cellNumber <= 9; cellNumber++) {
+											document.getElementById("cell" + blockNumber + "_" + cellNumber).className = "tttCell";
+										}
+									}
+									catch (err) {
+										
+									}
+									blockHasBeenWon = 1;
+								}
+							}
+						}
+					}
+					// checks to make sure that no block was won this turn
+					if (blockHasBeenWon == 0) {
+						// disables all other blocks if chosen block is greater than 1
+						if (i > 1) {
+							// disables all previous blocks
+							for (var j = 1; j < i; j++) {
+								try {
+									disabledBlock = "block" + j + "Disabled";
+									document.getElementById("block" + j).id = disabledBlock;
+									document.getElementById("block" + j + "Disabled").className = "tttBlockDisabled Block" + j;
+									for (var h = 1; h <= 9; h++) {
+										document.getElementById("cell" + j + "_" + h).className = "tttCellDisabled";
+									}
+								}
+								catch (err) {}
+							}
+							// disables all sequential blocks
+							for (var j = i + 1; j <= 9; j++) {
+								try {
+									disabledBlock = "block" + j + "Disabled";
+									document.getElementById("block" + j).id = disabledBlock;
+									document.getElementById("block" + j + "Disabled").className = "tttBlockDisabled Block" + j;
+									for (var h = 1; h <= 9; h++) {
+										document.getElementById("cell" + j + "_" + h).className = "tttCellDisabled";
+									}
+								}
+								catch (err) {}
+							}
+						}
+						// disables all blocks other than 1
+						else if (i == 1) {
+							for (var j = 2; j <= 9; j++) {
+								try {
+									disabledBlock = "block" + j + "Disabled";
+									document.getElementById("block" + j).id = disabledBlock;
+									document.getElementById("block" + j + "Disabled").className = "tttBlockDisabled Block" + j;
+									for (var h = 1; h <= 9; h++) {
+										document.getElementById("cell" + j + "_" + h).className = "tttCellDisabled";
+									}
+								}
+								catch (err) {}
+							}
+						}
+					}
+					f++;
+				}
+			}
+			
+		}
+	</script>
+	<script>
+		function winningMove(e) {
+			var a = e.parentNode.id;
+			var b = e.id;
+			var nameOfBlock = a.slice(-1);
+			var nameOfCell = String(b.slice(-1));
+			var letter = document.getElementById(b).innerHTML;
+			
+			var c1 = document.getElementById("cell" + nameOfBlock + "_1");
+			var c2 = document.getElementById("cell" + nameOfBlock + "_2");
+			var c3 = document.getElementById("cell" + nameOfBlock + "_3"); 
+			var c4 = document.getElementById("cell" + nameOfBlock + "_4");
+			var c5 = document.getElementById("cell" + nameOfBlock + "_5");
+			var c6 = document.getElementById("cell" + nameOfBlock + "_6");
+			var c7 = document.getElementById("cell" + nameOfBlock + "_7");
+			var c8 = document.getElementById("cell" + nameOfBlock + "_8");
+			var c9 = document.getElementById("cell" + nameOfBlock + "_9");
+			// switch statement to determine where wins can occur and to call winBlock() if criteria are met
+			switch(nameOfCell) {
+				case "1":
+					if (c1.innerHTML == c3. innerHTML && c1.innerHTML == c2.innerHTML) {
+						var winningLetter = c1.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c1.innerHTML == c7.innerHTML && c1.innerHTML == c4.innerHTML) {
+						var winningLetter = c1.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c1.innerHTML == c5.innerHTML && c1.innerHTML == c9.innerHTML) {
+						var winningLetter = c1.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "2":
+					if (c1.innerHTML == c3. innerHTML && c1.innerHTML == c2.innerHTML) {
+						var winningLetter = c2.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c2.innerHTML == c5.innerHTML && c5.innerHTML == c8.innerHTML) {
+						var winningLetter = c2.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "3":
+					if (c1.innerHTML == c3. innerHTML && c1.innerHTML == c2.innerHTML) {
+						var winningLetter = c3.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c3.innerHTML == c9.innerHTML && c3.innerHTML == c6.innerHTML) {
+						var winningLetter = c3.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c3.innerHTML == c5.innerHTML && c5.innerHTML == c7.innerHTML) {
+						var winningLetter = c3.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "4":
+					if (c1.innerHTML == c7.innerHTML && c1.innerHTML == c4.innerHTML) {
+						var winningLetter = c4.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c4.innerHTML == c5.innerHTML && c5.innerHTML == c6.innerHTML) {
+						var winningLetter = c4.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "5": 
+					if (c5.innerHTML == c2.innerHTML && c5.innerHTML == c8.innerHTML) {
+						var winningLetter = c5.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c5.innerHTML == c1.innerHTML && c5.innerHTML == c9.innerHTML) {
+						var winningLetter = c5.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c5.innerHTML == c3.innerHTML && c5.innerHTML == c7.innerHTML) {
+						var winningLetter = c5.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c5.innerHTML == c4.innerHTML && c5.innerHTML == c6.innerHTML) {
+						var winningLetter = c5.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "6":
+					if (c3.innerHTML == c9.innerHTML && c3.innerHTML == c6.innerHTML) {
+						var winningLetter = c6.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c6.innerHTML == c5.innerHTML && c6.innerHTML == c4.innerHTML) {
+						var winningLetter = c6.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "7":
+					if (c1.innerHTML == c7.innerHTML && c1.innerHTML == c4.innerHTML) {
+						var winningLetter = c7.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c7.innerHTML == c9.innerHTML && c7.innerHTML == c8.innerHTML) {
+						var winningLetter = c7.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c7.innerHTML == c5.innerHTML && c5.innerHTML == c3.innerHTML) {
+						var winningLetter = c7.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "8":
+					if (c7.innerHTML == c9.innerHTML && c7.innerHTML == c8.innerHTML) {
+						var winningLetter = c8.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c8.innerHTML == c5.innerHTML && c5.innerHTML == c2.innerHTML) {
+						var winningLetter = c8.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				case "9":
+					if (c7.innerHTML == c9.innerHTML && c7.innerHTML == c8.innerHTML) {
+						var winningLetter = c9.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					else if (c3.innerHTML == c9.innerHTML && c3.innerHTML == c6.innerHTML) {
+						var winningLetter = c9.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					
+					else if (c9.innerHTML == c5.innerHTML && c5.innerHTML == c1.innerHTML) {
+						var winningLetter = c9.innerHTML;
+						winBlock(e, winningLetter);
+					}
+					break;
+				default:
+					alert("it fell through");
+					break;
+			}
+		}
+	</script>
+	<script>
+		// function to hide all cells and add a background to block with desired symbol
+		function winBlock(e, winningLetter) {
+			var a = e.parentNode.id;
+			var b = e.id;
+			var nameOfBlock = a.slice(-1);
+			var nameOfCell = String(b.slice(-1));
+			var letter = document.getElementById(b).innerHTML;
+			
+			var c1 = document.getElementById("cell" + nameOfBlock + "_1");
+			var c2 = document.getElementById("cell" + nameOfBlock + "_2");
+			var c3 = document.getElementById("cell" + nameOfBlock + "_3"); 
+			var c4 = document.getElementById("cell" + nameOfBlock + "_4");
+			var c5 = document.getElementById("cell" + nameOfBlock + "_5");
+			var c6 = document.getElementById("cell" + nameOfBlock + "_6");
+			var c7 = document.getElementById("cell" + nameOfBlock + "_7");
+			var c8 = document.getElementById("cell" + nameOfBlock + "_8");
+			var c9 = document.getElementById("cell" + nameOfBlock + "_9");
+			
+			var wonBlock = "block" + nameOfBlock + "Won";
+			alert(winningLetter + " is a winner in " + a);
+			document.getElementById(a).className = "tttBlockWon Block" + nameOfBlock;
+			document.getElementById(a).id = wonBlock;
+			if (letter == 'X') {
+				document.getElementById(wonBlock).style.background = 'url(X.png)';
+			}
+			else if (letter == 'O') {
+				document.getElementById(wonBlock).style.background = 'url(O.png)';
+			}
+			for (var i = 1; i <= 9; i++) {
+				var j = ("cell" + nameOfBlock + "_" + i);
+				document.getElementById(j).className = 'tttCellHidden';
+			}
+			
+			
+		}
+	</script>
+	<script>
+		function winGame(wonBlock, nameOfBlock) {
+			alert("winGame has started");
+			// var = getStyle(object, 'background-image')
+			try {
+				var a = document.getElementById(wonBlock);
+				alert(a);
+				
+				var c = a.style.backgroundImage;
+				alert(c);
+				var b = c.slice(-6);
+				var block1, block2, block3, block4, block5, block6, block7, block8, block9;
+				for (int i = 1; i <= 9; i++) {
+					if (nameOfBlock == '1') {
+						
+					}
+				}
+			}
+			catch (err) {
+				alert(err);
+			}
+		}
+	</script>
+	<script>
+		function newGame() {
+			location.reload();
+		}
+	</script>
+</head>
+
+<body>
+	<div id = "whole">
+		<h1 id = "welcome">Welcome To Ultimate Tic Tac Toe!!</h1>
+		<div id="wholeGame">
+			<div id = "block1" class="tttBlock Block1">
+				<div id = "cell1_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell1_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			
+			<div id = "block2" class="tttBlock">
+				<div id = "cell2_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell2_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<div id = "block3" class="tttBlock">
+				<div id = "cell3_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell3_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<div id = "block4" class="tttBlock">
+				<div id = "cell4_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell4_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<div id = "block5" class="tttBlock">
+				<div id = "cell5_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell5_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<div id = "block6" class="tttBlock">
+				<div id = "cell6_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell6_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<div id = "block7" class="tttBlock">
+				<div id = "cell7_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell7_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<div id = "block8" class="tttBlock">
+				<div id = "cell8_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell8_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<div id = "block9" class="tttBlock">
+				<div id = "cell9_1" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_2" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_3" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_4" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_5" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_6" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_7" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_8" class = "tttCell" onclick="move(this);"></div>
+				<div id = "cell9_9" class = "tttCell" onclick="move(this);"></div>
+			</div>
+			<button id = "reset" title = "Click to Start New Game" onclick="newGame();">New Game</button>
+		</div>
+	</div>
+	
+</body>
+
+
+</html>

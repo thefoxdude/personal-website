@@ -1,0 +1,886 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%:
+}
+
+body {
+	text-align: left;
+	text-align: justify;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(background2.jpg) no-repeat center center fixed;
+	background-size: cover;
+	overflow: visible;
+	font-family: helvetica;
+}
+
+.ParallaxTop {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(violin_background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 200px;
+    width: 102%;
+    margin-left: -1%;
+}
+
+.ParallaxMid {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(fox_background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 200px;
+    width: 102%;
+    margin-left: -1%;
+}
+
+.ParallaxResume {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(fox_background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: 102%;
+    margin-left: -1%;
+}
+
+.FooterParallax {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(code_background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 150px;
+    width: 102%;
+    margin-left: -1%;
+}
+
+p {
+	line-height: 150%;
+}
+
+.normalLink {
+	text-decoration: underline;
+	color: black;
+}
+
+.normalLink:hover {
+	color: blue;
+}
+
+h2,h3 {
+	text-align: center;
+}
+
+#topStrip {
+	background: none;
+}
+
+#welcome {
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+	margin-top: 100px;
+}
+
+#welcomeName {
+	margin-bottom: 15px;
+	text-decoration: underline;
+}
+
+.WelcomeUnderline {
+	width: 225px;
+	margin: auto;
+	margin-top: 30px;
+	height: 50px;
+	border-bottom: medium solid #317879;
+}
+
+.WelcomeHighlight {
+	border: 1px solid #317879;
+	border-radius: 50px 50px 50px 50px;
+	width: 50%;
+	margin: auto;
+	margin-top: 15px;
+	background: linear-gradient(#317879,#62bfb4);
+	color: white;
+	margin-bottom: 150px;
+}
+
+#logo {
+	border: 1px solid black;
+	width: 300px;
+	height: 75px;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: white;
+}
+
+#topBar {
+	width: 102%;
+	margin-left: -1%;
+	position: relative;
+	top: 1px;
+	color: white;
+	text-align: right;
+	font-size: 1.1em;
+	background-color: #317879;
+}
+
+#newTopBar {
+	position: fixed;
+	top: 0px;
+	width: 102%;
+	margin-left: -1%;
+	color: white;
+	text-align: right;
+	font-size: 1.1em;
+	z-index: 1 !important;
+	background-color: #317879;
+}
+
+#links {
+	margin-left: 1%;
+  	padding: 0;
+  	overflow: hidden;
+  	position: relative;
+  	top: 1px;
+}
+
+div.MyLinks div.Icon {
+	font-size:15px;
+	display: none;
+	margin-right: 10px;
+}
+
+div.MyLinks div {
+	float: left;
+}
+
+div.MyLinks div a {
+	display: inline-block;
+  	text-align: center;
+  	padding: 14px 16px;
+  	transition: 0.3s;
+  	font-size: 17px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	cursor: pointer;
+	color: tan;
+}
+
+.Selected {
+	color: tan;
+	text-decoration: underline;
+}
+
+.Whole {
+	width: 102%;
+   background-color: #efefef;
+   font-size: 1em;
+   position: relative;
+   left: -1%;
+   overflow: hidden;
+}
+
+#introWhole {
+	margin-top: -1px;
+}
+
+.SectionTitle {
+	color: #317879;
+	text-align: center;
+}
+
+#changingText {
+  	border-left: 10px solid #317879;
+  	margin: 1.5em 10px;
+  	padding: 0.5em 10px;
+  	quotes: "\201C""\201D""\2018""\2019";
+  	width: 40%;
+  	max-width: 400px;
+  	margin: auto;
+  	margin-top: 50px;
+  	margin-bottom: 50px;
+}
+
+#textToChangeBox {
+	width: 100%;
+	position: relative;
+	top: 15px;
+}
+
+#textToChangeBox:before {
+	color: #317879;
+  	content: open-quote;
+  	font-size: 4em;
+  	line-height: 0.1em;
+  	margin-right: 0.25em;
+  	vertical-align: -0.4em;	
+}
+
+#textToChange {
+	position: relative;
+	top: -15px;
+}
+
+.Signature{
+	text-align: left;
+	position: relative;
+	top: -15px;
+	margin-top: 30px;
+}
+
+.SeparatingLine {
+	border: 1px solid #317879;
+	margin: auto;
+	width: 60%;
+	margin-top: 25px;
+}
+
+#background {
+	max-width: 600px;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 100px;
+	font-size: 1em;
+	margin-top: 60px;
+}
+
+#projects {
+	
+	margin: auto;
+	margin-top: 60px;
+	font-size: 1em;
+	max-width: 800px;
+	width: 75%;
+	height: 35%;
+}
+
+.Box {
+	min-width: 150px;
+	min-height: 140px;
+	width: 20%;
+	float: left;
+	position: relative;
+	left: 10%;
+	margin-right: 10%;
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+
+.Label {
+	margin-bottom: -5px;
+	margin-top: -5px;
+	font-style: oblique;
+	font-weight: bold;
+}
+
+#finishedProjects {
+	height: 200px;
+}
+
+.Image {
+	min-width: 150px;
+	min-height: 120px;
+	width: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(eProject.jpg);
+	background-size: cover;
+}
+
+#fProject1 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Ultimate.jpg);
+	background-size: 100%;
+}
+
+#fProject1:hover{
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(Ultimate.jpg);
+	background-size: 100%;
+}
+
+.fActive1 {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(Ultimate.jpg) !important;
+	background-size: 100% !important;
+}
+
+#fProject2 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(SOMHome.jpg);
+	background-size: 100%;
+}
+
+#fProject2:hover {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(SOMHome.jpg);
+	background-size: 100%;
+}
+
+.fActive2 {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(SOMHome.jpg) !important;
+	background-size: 100% !important;
+}
+
+#fProject3 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(PersonalHome.jpg);
+	background-size: 100%;
+}
+
+#fProject3:hover {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(PersonalHome.jpg);
+	background-size: 100%;
+}
+
+.fActive3 {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(PersonalHome.jpg) !important;
+	background-size: 100% !important;
+}
+
+#wProject1 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/cghome.jpg);
+	background-size: 100%;
+}
+
+#wProject1:hover {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(images/cghome.jpg);
+	background-size: 100%;
+}
+
+.wActive1 {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(images/cghome.jpg) !important;
+	background-size: 100% !important;
+}
+
+.Image:hover {
+	cursor: pointer;
+}
+
+#aboutMe {
+	border: 1px solid black;
+	width: 75%;
+	height: 20%;
+	margin: auto;
+	margin-top: 60px;
+}
+
+.Footer {
+	border: 1px solid black;
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+}
+
+.Option {
+	visibility: hidden;
+	position: absolute;
+	top: -500px;
+}
+
+/*     Portfolio    */
+
+#portfolioWhole {
+	height: 900px;
+}
+
+.Panel {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: none;
+    opacity: 0;
+    width: 80%;
+    margin: auto;
+}
+
+.Panel.show {
+    opacity: 1;
+    transition: 1s ease-in-out;
+    margin-bottom: 50px;
+    max-height: 800px;
+    background: #efefef;
+}
+
+.PanelParagraph {
+	width: 100%;
+}
+
+.PanelToLeft {
+	width: 50%;
+	float: left;
+}
+
+.PanelImage {
+	width: 40%;
+}
+
+.PanelImage2 {
+	width: 40%;
+	margin-right: 30px;
+}
+
+#videow1 {
+	width: 65%;
+	float: left;
+}
+
+#panelRightw1 {
+	width: 30%;
+	float: right;
+}
+
+#innerPanelw1 {
+	height: 350px;
+}
+
+/*     Resume    */
+
+#resumeImage {
+	width: 100%;
+	height: 1000px;
+	margin: auto;
+	margin-top: 40px;
+	transform: scale(1.15);
+}
+
+#resumeWhole {
+	width: 1000px;
+	margin: auto;
+}
+
+#resumeHolder {
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 50px;
+}
+
+.CenteredParagraph {
+	text-align: center;
+	width: 100%;
+}
+
+.SeperatedInfo {
+	margin-left: 30px;
+	margin-right: 20px;
+}
+
+.Bold {
+	font-weight: bold;
+}
+
+.LeftJustified {
+	text-align: left;
+	margin-left: 15px;
+	margin-top: 30px;
+}
+
+.ResumeHeader {
+	color: #317879;
+}
+
+.Paragraph {
+	margin-right: 50px;
+	margin-left: 50px;
+}
+
+.Bulletpoints {
+	margin-left: 30px;
+	margin-right: 30px;
+	text-align: justify;
+	line-height: 30px;
+	list-style: square;
+}
+
+.Bulletpoints2 {
+	list-style: circle;
+}
+
+.SubHeader {
+	text-align: left;
+	margin-left: 30px;
+}
+
+pre {
+	font-family: serif;
+}
+
+.NormalText {
+	font-weight: normal;
+}
+
+.ReferenceInfo {
+	margin-left: 30px;
+}
+
+/*     About me    */
+
+.AboutMeParagraph {
+	width: 50%;
+	margin: auto;
+	margin-top: 50px;
+	line-height: 20px;
+}
+
+#future {
+	margin-bottom: 50px;
+}
+
+/*     Contact    */
+
+#contactWhole {
+	text-align: center;
+}
+
+#phones {
+	max-width: 350px;
+	min-width: 300px;
+	width: 40%;
+	margin: auto;
+	height: 95px;
+	padding: 5px;
+}
+
+#cellPhone {
+	width: 45%;
+	height: 90px;
+	margin: auto;
+}
+
+#facebook {
+	margin-bottom: 50px;
+}
+
+/*      Extras      */
+
+.FloatRight {
+	float: right;
+}
+
+@media screen and (max-width: 1040px) {
+	#tttLabel {
+		font-size: .8em;
+		
+	}
+	
+	.Label {
+		height: 25px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.WelcomeHighlight {
+		font-size: 1.1em;
+	}
+	
+	#changingText {
+		width: 90%;
+	}
+	
+	#background {
+		width: 90%:
+	}
+	
+	.AboutMeParagraph {
+		width: 90%;
+	}
+	
+	#resumeWhole {
+		width: 700px;
+	}
+
+	#resumeHolder {
+		margin: auto;
+		margin-top: 60px;
+		margin-bottom: 50px;
+	}
+	
+	#finishedProjects {
+		width: 80%;
+		margin: auto;
+		height: 100%;
+	}
+	
+	.Box {
+		float: none;
+		margin: auto;
+		left: 0%;
+		margin-bottom: 50px;
+	}
+
+	#resumeHolder {
+		width: 80%;
+		margin: auto;
+		margin-top: 60px;
+		font-size: .8em !important;
+		margin-bottom: 50px;
+	}
+
+	.SeperatedInfo {
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	
+	.Bold {
+		font-weight: bold;
+	}
+
+	.LeftJustified {
+		text-align: left;
+		margin-left: 5px;
+		margin-top: 20px;
+	}
+
+	.Bulletpoints {
+		margin-left: -5px;
+		margin-right: 20px;
+		text-align: justify;
+		line-height: 20px;
+		list-style: square;
+	}
+
+	.Bulletpoints2 {
+		list-style: circle;
+		margin-left: -25px;
+		margin-right: 20px;
+		text-align: justify;
+		line-height: 20px;
+	}
+
+	.SubHeader {
+		text-align: left;
+		margin-left: 30px;
+	}
+
+	pre {
+		font-family: serif;
+	}
+
+	.NormalText {
+		font-weight: normal;
+	}
+
+	.ReferenceInfo {
+		margin-left: 30px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	#topStrip {
+		font-size: .8em;
+	}
+	
+	#topBar, .Whole {
+		width: 105%;
+		margin-left: -2.5%;
+	}
+	
+	.Parallax {
+		width: 105%;
+		margin-left: -2.5%;
+	}
+
+	#welcome {
+		margin-top: 50px;
+	}
+	
+	div.MyLinks div {
+		display: none;
+	}
+	
+	div.MyLinks div.Icon {
+		float: right;
+    	display: inline-block;
+	}
+	
+	div.MyLinks.Responsive {
+		position: relative;
+	}
+	
+	div.MyLinks.Responsive div#icon {
+		position: absolute;
+    	right: 0;
+    	top: 0;
+	}
+	
+	div.MyLinks.Responsive div {
+		float: none;
+    	display: inline;
+	}
+	
+	div.MyLinks.Responsive div a {
+		display: block;
+    	text-align: left;
+	}
+	
+	.PanelToLeft {
+		float: none;
+		width: 100%;
+	}
+	
+	#innerPanelw1 {
+		height: 550px;
+	}
+	
+	#panelRightw1 {
+		float: none;
+		width: 100%;
+	}
+	
+	#videow1 {
+		width: 80%;
+		float: none;
+		margin-left: 8%;
+	}
+	
+	#resumeWhole {
+		width: 500px;
+	}
+	
+	#resumeHolder {
+		margin: auto;
+		margin-top: 60px;
+		margin-bottom: 50px;
+		font-size: .4em !important;
+	}
+
+	.SeperatedInfo {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.Bold {
+		font-weight: bold;
+	}
+
+	.LeftJustified {
+		text-align: left;
+		margin-left: 5px;
+		margin-top: 20px;
+	}
+
+	.Bulletpoints {
+		margin-left: -5px;
+		margin-right: 20px;
+		text-align: justify;
+		line-height: 20px;
+		list-style: square;
+	}
+
+	.Bulletpoints2 {
+		list-style: circle;
+		margin-left: -25px;
+		margin-right: 20px;
+		text-align: justify;
+		line-height: 20px;
+	}
+
+	.SubHeader {
+		text-align: left;
+		margin-left: 30px;
+	}
+
+	pre {
+		font-family: serif;
+	}
+
+	.NormalText {
+		font-weight: normal;
+	}
+
+	.ReferenceInfo {
+		margin-left: 30px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#topStrip {
+		width: 100%;
+	}
+	
+	.Whole {
+		width: 110%;
+		margin-left: -5%;
+	}
+	
+	.WelcomeHighlight {
+		width: 90%;
+	}
+	
+	.AboutMeParagraph {
+		width: 75%;
+		margin: auto; 
+	}
+	
+	.PanelImage, .PanelImage2 {
+		float: none;
+		width: 75%;
+		margin-left: 12.5%;
+		margin-bottom: 20px;
+	}
+	
+	#resumeWhole {
+		width: 400px;
+	}
+
+	#resumeHolder {
+		margin: auto;
+		margin-top: 60px;
+		margin-bottom: 50px;
+		font-size: .4em !important;
+	}
+
+	.Bold {
+		font-weight: bold;
+	}
+
+	.LeftJustified {
+		text-align: left;
+		margin-left: 5px;
+		margin-top: 20px;
+	}
+
+	.Bulletpoints {
+		margin-left: -5px;
+		margin-right: 20px;
+		text-align: justify;
+		line-height: 20px;
+		list-style: square;
+	}
+
+	.Bulletpoints2 {
+		list-style: circle;
+		margin-left: -25px;
+		margin-right: 20px;
+		text-align: justify;
+		line-height: 20px;
+	}
+
+	.SubHeader {
+		text-align: left;
+		margin-left: 30px;
+	}
+
+	pre {
+		font-family: serif;
+	}
+
+	.NormalText {
+		font-weight: normal;
+	}
+
+	.ReferenceInfo {
+		margin-left: 30px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#topBar, .Whole {
+		width: 115%;
+		margin-left: -7.5%;
+	}
+	
+	#resumeWhole {
+		width: 104%;
+		margin: auto;
+		margin-left: -1%;
+	}
+	
+	.SeperatedInfo {
+		margin-left: 5px;
+		margin-right: 5px;
+		font-size: .8em;
+	}
+}

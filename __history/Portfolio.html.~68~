@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<head>
+	<Title>Daniel Fox</Title>
+	<link rel="stylesheet" type="text/css" href="MyStyling.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+
+<body>
+	<div id="topStrip">
+		<div id="topBar">
+			<div id="logo">
+			
+			</div>
+			<div id="links">
+				<div class="Button" id="contact"><a href="Contact.html">Contact</a></div> &nbsp; &nbsp; 
+				<div class="Button" id="resume"><a href="Resume.html">Resume</a></div> &nbsp; &nbsp; 
+				<div class="Button Selected" id="portfolio">Portfolio</div> &nbsp; &nbsp; 
+				<div class="Button" id="aboutMeTop"><a href="About Me.html">About Me</a></div> &nbsp; &nbsp; 
+				<div class="Button" id="home"><a href="index.html">Home</a></div>
+			</div>
+		</div>
+		<div id="welcome">
+			<h1>Portfolio</h1>
+		</div>
+	</div>
+	
+	
+	<div class="Whole" id="portfolioWhole">
+		<div id="projects">
+			<h2>Completed Projects</h2>
+			<div id="finishedProjects">
+				<div class="Box">
+					<p class="Label">Ultimate Tic Tac Toe</p>
+					<img id="fProject1" class="Image Accordion">
+				</div>
+				<div class="Box">
+					<p class="Label">Housing App</p>
+					<img id="fProject2" class="Image Accordion">
+				</div>
+				<div class="Box">
+					<p class="Label">This website</p>
+					<img id="fProject3" class="Image Accordion">
+				</div>
+			</div>
+			<div id="fpanel1" class="Panel">
+				<p>This is a small website I built for playing the classic game of tic tac
+				toe with a unclassical twist. This is a real game that has been made before
+				so it has real rules as listed in the website. I built this from scratch using
+				HTML5, CSS, and JavaScript. This was built as a class project in school.</p>
+				<p>Link:
+					<a href="Ultimate Tic Tac Toe/TicTacToe.html" target="_blank" title="Tic Tac Toe" class="normalLink">
+						Ultimate Tic Tac Toe
+					</a>
+				</p>
+			</div>
+			<div id="fpanel2" class="Panel">
+				<p class="PanelToLeft">This is a web app designed for the California Baptist University School of 
+				Music. The purpose behind the creation of this app was to simplify the housing
+				process when tour groups needed host homes at performance venues. It has an automated
+				randomizer that sorts, using a list of contraints, the members of a performance 
+				group into small clusters for housing. I coded and designed the front end.<br />
+				Because of legal reasons, I am only able to provide pictures.</p>
+				<div><img class="PanelImage FloatRight" src="SOMHome.jpg" alt="Picture of Home Page"></div>
+				<div><img class="PanelImage2 FloatRight" src="SOMStudents.jpg" alt="Picture of Home Page"></div>
+			</div>
+			<div id="fpanel3" class="Panel">
+				<p>This personal website I built from scratch using only HTML5, CSS, and JavaScript.
+				I built this in my free time during my school career.</p>
+			</div>
+			
+			<div class="SeparatingLine"></div>
+			
+			<h2>Existing Projects</h2>
+			<div id="existingProjects">
+				<div class="Box">
+					<img id="eProject1" class="Image Accordion">
+				</div>
+				<div class="Box">
+					<img id="eProject2" class="Image Accordion">
+				</div>
+				<div class="Box">
+					<img id="eProject3" class="Image Accordion">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		var acc = document.getElementsByClassName("Accordion");
+		var panels = document.getElementsByClassName("Panel");
+		var i;
+		var lastClicked = "";
+
+		for (i = 0; i < acc.length; i++) {
+    		acc[i].onclick = function(){
+    			var currentClick = "";
+    			var boxID = this.id;
+        		var num = boxID.toString().slice(-1);
+        		var type = boxID.toString().charAt(0);
+        		currentClick = type + num;
+        		var boxToShow;
+        		if (type == "f") {
+        			boxToShow = document.getElementById("fpanel" + num);
+        		}
+        		else {
+        			boxToShow = document.getElementById("epanel" + num);
+        		}
+        		
+        		if (currentClick == lastClicked) {
+        			this.classList.toggle("Active");
+        			boxToShow.classList.toggle("show");
+        			lastClicked = "";
+        		}
+        		else {
+        			lastClicked = currentClick;
+        		}
+    			accToggle(acc);
+    			panelToggle(panels);
+    			
+        		
+  		}
+		}
+	</script>
+	
+	<script>
+		function accToggle(array) {
+			var j;
+			for (j = 0; j < array.length; j++) {
+				array[j].className = "Image Accordion";
+			}
+		}
+		
+		function panelToggle(array) {
+			var j;
+			for (j = 0; j < array.length; j++) {
+				array[j].className = "Panel";
+			}
+		}
+	</script>
+	
+	
+</body>
+
+

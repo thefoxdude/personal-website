@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+	<Title>Daniel Fox</Title>
+	<link rel="stylesheet" type="text/css" href="MyStyling.css">
+	
+	
+</head>
+
+<body>
+	<div id="topStrip">
+		<div id="topBar">
+			<div id="logo">
+			
+			</div>
+			<div id="links">
+				<div class="Button" id="home"><a href="Home.html">Home</a></div> &nbsp; &nbsp; 
+				<div class="Button" id="resume"><a href="Resume.html">Resume</a></div> &nbsp; &nbsp; 
+				<div class="Button" id="portfolio"><a href="portfolio.html">Portfolio</a></div> &nbsp; &nbsp; 
+				<div class="Button" id="aboutMeTop"><a href="About Me.html">About Me</a></div> &nbsp; &nbsp; 
+				<div class="Button Selected" id="contact">Contact</div>
+			</div>
+		</div>
+		<div id="welcome">
+			<h1>Contact</h1>
+		</div>
+	</div>
+	
+	
+	<div class="Whole" id="contactWhole">
+		<br /> <br />
+		<h3>Daniel Fox</h3>
+		<div class="SeparatingLine"></div>
+		<br />
+		<h4>Mailing Address</h4>
+		<p>P.O. Box 400 <br /> <br />
+		Rimforest, Ca 92378</p>
+		<div class="SeparatingLine"></div>
+		<br /> <br />
+		<div id="phones">
+			<div id="homePhone">
+				<h4>Home Phone:</h4>
+				(909) - 337 - 0030
+			</div>
+			<div id="cellPhone">
+				<h4>Cell Phone:</h4>
+				(909) - 556 - 2091
+			</div>
+		</div>
+		<div class="SeparatingLine"></div>
+		<div id="email">
+			<h4>Email:</h4>
+			DanielOrrin.Fox@gmail.com
+		</div>
+		<div class="SeparatingLine"></div>
+		<div id="linkedIn">
+			<br />
+			Find out more about me
+			<h4>LinkedIn:</h4>
+			<a href="https://www.linkedin.com/profile/preview?vpa=cxn1&locale=en_US" target="_blank" class="normalLink">Daniel Fox</a>
+		</div>
+		<div class="Footer"></div>
+	</div>
+	
+	
+</body>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+	<Title>Daniel Fox</Title>
+	<link rel="stylesheet" type="text/css" href="MyStyling.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+
+<body>
+	<div id="topStrip">
+		<div id="topBar">
+			<div id="logo">
+			
+			</div>
+			<div id="links">
+				<div class="Button" id="contact"><a href="Contact.html">Contact</a></div>  &nbsp; &nbsp; 
+				<div class="Button" id="resume"><a href="Resume.html">Resume</a></div> &nbsp; &nbsp; 
+				<div class="Button" id="portfolio"><a href="portfolio.html">Portfolio</a></div> &nbsp; &nbsp; 
+				<div class="Button Selected" id="aboutMeTop">About Me</div> &nbsp; &nbsp; 
+				<div class="Button" id="home"><a href="index.html">Home</a></div>
+			</div>
+		</div>
+		<div id="welcome">
+			<h1>About Me</h1>
+		</div>
+	</div>
+	
+	<div class="Whole" id="aboutMeWhole">
+		<div id="current">
+			<h3>My Current Life</h3>
+			<p>I am a recent graduate with a degree in software engineering. I went to California
+			Baptist University in Southern California. During my time school, I focused on web
+			development. Despite the high number of template creaters, I enjoy building websites
+			from scratch. I was also deeply involved with the music department there. I was fortunate 
+			to have also landed an internship while at school with a company called Zyante. Zyante does 
+			online technical writing for colleges and universities, and I was privilaged to be a part of 
+			their development team for two years. I recieved exposure to more web development as well as 
+			software testing, bug writing, and new languages in which to program. 
+			Some of my passions include building easy-to-use websites, mobile app design, violin, and quality 
+			family time. I currently live in Southern California in the Inland Empire.
+			</p>
+		</div>
+		<div class="SeparatingLine"></div>
+		<div id="past">
+			<h3>My Past</h3> <br />
+			<p>I grew up in the mountains of California as the youngest of six children.
+			I initially became interested in engineering when I began looking at Cal 
+			Baptist as a possibility for higher education. I started out as an electrical, computer engineer, 
+			but switched over as soon as software engineering was available. I have loved
+			website development from the moment I was introduced to it, and I have continued to
+			enjoy it as I learn more. I have also been extremely involved in music
+			and play violin in several orchestras and small groups at school. I have played
+			violin for 14 years now. 
+			</p>
+		</div>
+		<div class="SeparatingLine"></div>
+		<div id="future">
+			<h3>My Future</h3> <br />
+			<p>I would like to build a career in web development. My dream would be to have the 
+			skills to complete the entire procedure of designing, building, and servicing a 
+			website on my own. I still have a lot to learn, and I want to get more involved in 
+			other web languages to see what they have to offer.
+			</p>
+		</div>
+		
+		
+	</div>
+	
+	
+</body>
