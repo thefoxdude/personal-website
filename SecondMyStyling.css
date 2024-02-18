@@ -112,7 +112,7 @@ h2,h3 {
 	position: relative;
 	top: 1px;
 	color: white;
-	text-align: right;
+	text-align: center;
 	font-size: 1.1em;
 	background-color: #317879;
 }
@@ -130,11 +130,12 @@ h2,h3 {
 }
 
 #links {
-	margin-left: 1%;
-  	padding: 0;
-  	overflow: hidden;
-  	position: relative;
-  	top: 1px;
+  padding: 0;
+  overflow: hidden;
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  top: 1px;
 }
 
 div.MyLinks div.Icon {
