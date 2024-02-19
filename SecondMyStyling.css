@@ -333,10 +333,21 @@ a:hover {
 #wProject1 {
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/cghome.jpg);
 	background-size: 100%;
+  background
 }
 
 #wProject1:hover {
 	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(images/cghome.jpg);
+	background-size: 100%;
+}
+
+#wProject2 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/denom1.jpg) no-repeat center;
+	background-size: 100%;
+}
+
+#wProject2:hover {
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(images/denom1.jpg) no-repeat center;
 	background-size: 100%;
 }
 
@@ -411,6 +422,12 @@ a:hover {
 .PanelImage2 {
 	width: 40%;
 	margin-right: 30px;
+}
+
+.PanelImage3 {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20px;
 }
 
 #videow1 {
@@ -548,6 +565,10 @@ pre {
 
 .FloatRight {
 	float: right;
+}
+
+.FloatLeft {
+	float: left;
 }
 
 @media screen and (max-width: 1040px) {
