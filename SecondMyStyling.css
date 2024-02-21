@@ -285,6 +285,16 @@ a:hover {
 	background-size: cover;
 }
 
+#fProject0 {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/simpletask1.jpg) no-repeat center;
+	background-size: 100%;
+}
+
+#fProject0:hover{
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(images/simpletask1.jpg) no-repeat center;
+	background-size: 100%;
+}
+
 #fProject1 {
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Ultimate.jpg);
 	background-size: 100%;
